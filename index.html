@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizontal Scroll Menu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .hero-section-1 {
+      position: relative;
+      background-image: url("Assets/OurSpaces.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero-section-2 {
+      position: relative;
+      background-image: url("Assets/Set-menu-1.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .heading-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(238, 142, 142);
+      padding: 20px 0;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    .container {
+      position: relative;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .overlay {
+      padding: 10px;
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid white;
+      color: white;
+      text-align: center;
+    }
+
+    th,
+    td {
+      padding: 10px;
+    }
+
+    /* footer Sticky style */
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    button {
+      background-color: #EE7371;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .share-btn {
+      background-color: #EE7371;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    /* Horizontal Scroll */
+    .menu-container {
+      width: 100%;
+      height: 2%;
+      overflow-x: auto;
+      white-space: nowrap;
+      background-color: #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border: solid white 2px ;
+      /* overflow-x: hidden; */
+    }
+
+    .menu-item {
+      display: inline-block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .menu-item:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container">
+    <div class="menu-item" onclick="scrollToSection('OUR SPACES')">OUR SPACES</div>
+    <div class="menu-item" onclick="scrollToSection('SET MENU 1')">SET MENU 1</div>
+    <div class="menu-item" onclick="scrollToSection('SET MENU 2')">SET MENU 2</div>
+    <div class="menu-item" onclick="scrollToSection('FORK BUFFET')">FORK BUFFET</div>
+    <div class="menu-item" onclick="scrollToSection('FINGER BUFFET')">FINGER BUFFET</div>
+    <div class="menu-item" onclick="scrollToSection('DAY DELEGATE PACKAGES')">DAY DELEGATE PACKAGES</div>
+    <div class="menu-item" onclick="scrollToSection('ROOM ONLY HIRE')">ROOM ONLY HIRE</div>
+    <div class="menu-item" onclick="scrollToSection('BABY SHOWER PACKAGE')">BABY SHOWER PACKAGE</div>
+    <div class="menu-item" onclick="scrollToSection('REMEMBRANCE PACKAGE')">REMEMBRANCE PACKAGE</div>
+    <div class="menu-item" onclick="scrollToSection('CONTACT US')">CONTACT US</div>
+
+  </div>
+  <div class="Main-Section">
+  <section id="OUR SPACES">
+    <div class="hero-section-1">
+      <div class="heading-container">
+        <h1>OUR SPACES</h1>
+      </div>
+      <div class="container" style="margin-top: 80px" ;>
+        <div class="overlay">
+          <div class="content-container">
+            <p>
+              Meet. Train. Play. At Novotel Edinburgh Park, the ultimate 4-star
+              venue for all your meeting and event needs. Our well-equipped
+              event spaces can accommodate parties of up to 180 guests.
+              Facilities include experienced event staff, high speed WiFi
+              access, fully air- conditioned rooms and high quality audio visual
+              equipment. Located next to Edinburgh Park train station and
+              directly off the M8, Novotel Edinburgh Park benefits from
+              exceptional access. Edinburgh Airport and City Centre can be
+              accessed via regular buses or trams.
+            </p>
+            <br />
+            <p>Enter a world of possibilities.</p>
+            <table>
+              <tr>
+                <th></th>
+                <th>Area</th>
+                <th>Height</th>
+              </tr>
+              <tr>
+                <td>Hermiston Suite</td>
+                <td>174</td>
+                <td>3.0</td>
+              </tr>
+              <tr>
+                <td>Hermiston 1&2</td>
+                <td>116</td>
+                <td>3.0</td>
+              </tr>
+              <tr>
+                <td>Hermiston 1</td>
+                <td>58</td>
+                <td>3.0</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="SET MENU 1">
+    <div class="hero-section-2">
+      <div class="heading-container">
+        <h1>SET MENU 1</h1>
+      </div>
+      <div class="container" style="margin-top: 80px" ;>
+        <div class="overlay">
+          <div class="content-container">
+            <p>DINE - £30.00 per person</p>
+            <p><strong>TO START</strong></p>
+            <p>
+              Roasted tomato soup served with warm bread & butter Thai noodle
+              salad Asian style slaw, sweet chilli sauce & sesame seeds Haggis
+              bon bons Arran mustard & whisky
+            </p>
+            <br />
+            <p><strong>TO FOLLOW</strong></p>
+            <p>
+              Chicken katsu curry Jasmine rice & pickled vegetables Sea bass
+              fillet Sautéed potatoes, samphire & cherry tomatoes Spinach &
+              ricotta ravioli Chive cream sauce, sundried tomatoes & balsato
+            </p>
+            <br />
+            <p><strong>TO FINISH</strong></p>
+            <p>
+              CVanilla cheesecake Red berry compote Chocolate mousse Vanilla
+              Chantilly & honeycomb Lemon posset Basil & raspberries
+            </p>
+            <p style="font-size: 12px;">*Dietary requirements catered for on request</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <!-- Empty Sections -->
+  <!-- <section id="SET MENU 2">SET MENU 2</section>
+  <section id="FORK BUFFET">FORK BUFFET</section>
+  <section id="FINGER BUFFET">FINGER BUFFET</section>
+  <section id="DAY DELEGATE PACKAGES">DAY DELEGATE PACKAGES</section>
+  <section id="ROOM ONLY HIRE">ROOM ONLY HIRE</section>
+  <section id="BABY SHOWER PACKAGE">BABY SHOWER PACKAGE</section>
+  <section id="REMEMBRANCE PACKAGE">REMEMBRANCE PACKAGE</section>
+  <section id="CONTACT US">CONTACT US</section> -->
+
+  <!-- Footer -->
+  <div class="footer">
+    <!-- Share button -->
+    <button id="shareButton">Share</button>
+    <a href="#" target="_blank">
+      <button class="get-in-touch">Get in Touch</button>
+    </a>
+  </div>
+  </div>
+  <script>
+    const shareData = {
+      url: "https://bryantnorman.github.io/Novotel-Sample-1/",
+    };
+    const btn = document.getElementById("shareButton");
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.share(shareData);
+        // resultPara.textContent = "Shared successfully";
+      }
+      catch (err) {
+        // resultPara.textContent = `Error: ${err}`;
+      }
+    });
+  </script>
+  <script>
+    function scrollToSection(id) {
+      var element = document.getElementById(id);
+      var menuBarHeight = document.querySelector('.menu-container').offsetHeight;
+      var scrollPosition = element.offsetTop - menuBarHeight;
+      window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+    }
+  </script>    
+</body>
+
+</html>
