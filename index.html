@@ -4,10 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>parallax</title>
+    <title>Sticky Header</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
-
         @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
 
         * {
@@ -21,36 +20,52 @@
             font-size: 16px;
             font-family: 'Work Sans', sans-serif;
             color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            width: 100%;
+            height: 2%;
+            overflow-x: auto;
+            white-space: nowrap;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border: solid white 2px;
+        }
+
+        .menu-item {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
         }
 
         .heading {
-            min-height: 100vh;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
-        #image-1{
-            background-image: radial-gradient(circle,
-                    rgba(0, 0, 0, 0.2),
-                    rgba(0, 0, 0, 0.4),
-                    rgba(0, 0, 0, 0.6)),
-                url("Assets/OurSpaces.jpg");
+        #image-1 {
+            background-image: url("Assets/OurSpaces.jpg");
         }
 
-        #image-2{
-            background-image: radial-gradient(circle,
-                    rgba(0, 0, 0, 0.2),
-                    rgba(0, 0, 0, 0.4),
-                    rgba(0, 0, 0, 0.6)),
-                url("Assets/Set-menu-1.jpeg");
-        }
-
-        section {
-            height: 100vh;
-            display: grid;
-            place-items: center;
+        #image-2 {
+            background-image: url("Assets/Set-menu-1.jpeg");
         }
 
         .section {
@@ -60,23 +75,26 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-        }
-        .section p {
             text-align: center;
+            height: 100vh;
+        }
+
+        .section p {
             margin-bottom: 20px;
             font-size: 18px;
+            color: #fff;
         }
 
         .section table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            color: #fff;
         }
 
         .section th,
         .section td {
             border: 1px solid #fff;
-            color: #fff;
             text-align: center;
             padding: 10px;
         }
@@ -87,18 +105,66 @@
 
         h1 {
             font-size: 3rem;
+            color: #fff;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: #EE7371;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .share-btn {
+            background-color: #EE7371;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
         }
     </style>
 </head>
 
 <body>
+    <!-- Sticky Header -->
+    <div class="menu-container">
+        <div class="menu-item" onclick="scrollToSection('OUR SPACES')">OUR SPACES</div>
+        <div class="menu-item" onclick="scrollToSection('SET MENU 1')">SET MENU 1</div>
+        <div class="menu-item" onclick="scrollToSection('SET MENU 2')">SET MENU 2</div>
+        <div class="menu-item" onclick="scrollToSection('FORK BUFFET')">FORK BUFFET</div>
+        <div class="menu-item" onclick="scrollToSection('FINGER BUFFET')">FINGER BUFFET</div>
+        <div class="menu-item" onclick="scrollToSection('DAY DELEGATE PACKAGES')">DAY DELEGATE PACKAGES</div>
+        <div class="menu-item" onclick="scrollToSection('ROOM ONLY HIRE')">ROOM ONLY HIRE</div>
+        <div class="menu-item" onclick="scrollToSection('BABY SHOWER PACKAGE')">BABY SHOWER PACKAGE</div>
+        <div class="menu-item" onclick="scrollToSection('REMEMBRANCE PACKAGE')">REMEMBRANCE PACKAGE</div>
+        <div class="menu-item" onclick="scrollToSection('CONTACT US')">CONTACT US</div>
+    </div>
+
     <!-- Section-1 Image-->
     <section class="heading" id="image-1">
         <h1>OUR SPACES</h1>
     </section>
 
     <!-- Section 1 !-->
-    <section class="section">
+    <section class="section" id="OUR SPACES">
         <p>
             Meet. Train. Play. At Novotel Edinburgh Park, the ultimate 4-star
             venue for all your meeting and event needs. Our well-equipped
@@ -109,31 +175,31 @@
             directly off the M8, Novotel Edinburgh Park benefits from
             exceptional access. Edinburgh Airport and City Centre can be
             accessed via regular buses or trams.
-          </p>
-          <br />
-          <p>Enter a world of possibilities.</p>
-          <table>
+        </p>
+        <br />
+        <p>Enter a world of possibilities.</p>
+        <table>
             <tr>
-              <th></th>
-              <th>Area</th>
-              <th>Height</th>
+                <th></th>
+                <th>Area</th>
+                <th>Height</th>
             </tr>
             <tr>
-              <td>Hermiston Suite</td>
-              <td>174</td>
-              <td>3.0</td>
+                <td>Hermiston Suite</td>
+                <td>174</td>
+                <td>3.0</td>
             </tr>
             <tr>
-              <td>Hermiston 1&2</td>
-              <td>116</td>
-              <td>3.0</td>
+                <td>Hermiston 1&2</td>
+                <td>116</td>
+                <td>3.0</td>
             </tr>
             <tr>
-              <td>Hermiston 1</td>
-              <td>58</td>
-              <td>3.0</td>
+                <td>Hermiston 1</td>
+                <td>58</td>
+                <td>3.0</td>
             </tr>
-          </table>
+        </table>
     </section>
 
     <!-- Section-2 Image-->
@@ -142,38 +208,59 @@
     </section>
 
     <!-- Section 2 !-->
-    <section class="section">
+    <section class="section" id="SET MENU 1">
         <p>DINE - £30.00 per person</p>
-            <p><strong>TO START</strong></p>
-            <p>
-              Roasted tomato soup served with warm bread & butter Thai noodle
-              salad Asian style slaw, sweet chilli sauce & sesame seeds Haggis
-              bon bons Arran mustard & whisky
-            </p>
-            <br />
-            <p><strong>TO FOLLOW</strong></p>
-            <p>
-              Chicken katsu curry Jasmine rice & pickled vegetables Sea bass
-              fillet Sautéed potatoes, samphire & cherry tomatoes Spinach &
-              ricotta ravioli Chive cream sauce, sundried tomatoes & balsato
-            </p>
-            <br />
-            <p><strong>TO FINISH</strong></p>
-            <p>
-              CVanilla cheesecake Red berry compote Chocolate mousse Vanilla
-              Chantilly & honeycomb Lemon posset Basil & raspberries
-            </p>
-            <p style="font-size: 12px;">*Dietary requirements catered for on request</p>
+        <p><strong>TO START</strong></p>
+        <p>
+            Roasted tomato soup served with warm bread & butter Thai noodle
+            salad Asian style slaw, sweet chilli sauce & sesame seeds Haggis
+            bon bons Arran mustard & whisky
+        </p>
+        <br />
+        <p><strong>TO FOLLOW</strong></p>
+        <p>
+            Chicken katsu curry Jasmine rice & pickled vegetables Sea bass
+            fillet Sautéed potatoes, samphire & cherry tomatoes Spinach &
+            ricotta ravioli Chive cream sauce, sundried tomatoes & balsato
+        </p>
+        <br />
+        <p><strong>TO FINISH</strong></p>
+        <p>
+            CVanilla cheesecake Red berry compote Chocolate mousse Vanilla
+            Chantilly & honeycomb Lemon posset Basil & raspberries
+        </p>
+        <p style="font-size: 12px;">*Dietary requirements catered for on request</p>
     </section>
 
+    <!-- Footer -->
+    <div class="footer">
+        <!-- Share button -->
+        <button id="shareButton">Share</button>
+        <a href="#" target="_blank">
+            <button class="get-in-touch">Get in Touch</button>
+        </a>
+    </div>
+
     <script>
-        window.onscroll = function () {
-            if (window.scrollY > window.innerHeight) {
-                myNav.classList.add("scrolled");
-            } else {
-                myNav.classList.remove("scrolled");
-            }
+        const shareData = {
+            url: "https://bryantnorman.github.io/Novotel-Sample-1/",
         };
+        const btn = document.getElementById("shareButton");
+        btn.addEventListener("click", async () => {
+            try {
+                await navigator.share(shareData);
+            }
+            catch (err) {
+                console.error('Error sharing:', err);
+            }
+        });
+
+        function scrollToSection(id) {
+            var element = document.getElementById(id);
+            var menuBarHeight = document.querySelector('.menu-container').offsetHeight;
+            var scrollPosition = element.offsetTop - menuBarHeight;
+            window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+        }
     </script>
 </body>
 
